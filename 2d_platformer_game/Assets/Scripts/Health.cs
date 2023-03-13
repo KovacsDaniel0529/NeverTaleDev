@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public static double totalHealth = 100;
+    public static float totalHealth = 100f;
 
 }
