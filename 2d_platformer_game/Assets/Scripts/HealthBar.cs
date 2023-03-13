@@ -14,7 +14,7 @@ public class HealthBar : MonoBehaviour
         Debug.Log(Health.totalHealth);
     }
 
-    public void Damage(double damage)
+    public void Damage(float damage)
     {
         if ((Health.totalHealth -= damage) >= 0)
         {
@@ -30,7 +30,7 @@ public class HealthBar : MonoBehaviour
         Debug.Log("Damage");
     }
 
-    public void Heal(double heal)
+    public void Heal(float heal)
     {
         if ((Health.totalHealth += heal) < 100)
         {
@@ -63,6 +63,5 @@ public class HealthBar : MonoBehaviour
         {
             healthBarIMG.sprite = healthStage4;
         }
-        Debug.Log("Yes");
     }
 }

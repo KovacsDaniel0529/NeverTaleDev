@@ -160,33 +160,34 @@ public class CharacterController2D : MonoBehaviour
 	{
 		// Valamiért duplázza a damge-et, és a heal-t
 		// Erre figyelj oda
-		if (collision.tag == "trap")
+		/*if (collision.tag == "trap")
 		{
+			Debug.Log("traphit");
 			int cooloffwait = 100;
 			if (spikeDamaheCoolOff == 0)
 			{
-				healthBar.Damage(25);
+				healthBar.Damage(25f);
 				spikeDamaheCoolOff = cooloffwait;
 			}
-		}
+		}*/
 		if (collision.tag == "melone")
 		{
-			healthBar.Heal(75);
+			healthBar.Heal(75f);
 			Destroy(GameObject.FindWithTag("melone"));
 		}
 		if (collision.tag == "banana")
 		{
-			healthBar.Heal(25);
+			healthBar.Heal(25f);
 			Destroy(GameObject.FindWithTag("banana"));
 		}
 		if (collision.tag == "apple")
 		{
-			healthBar.Heal(25);
+			healthBar.Heal(25f);
 			Destroy(GameObject.FindWithTag("apple"));
 		}
 		if (collision.tag == "cherry")
 		{
-			healthBar.Heal(25);
+			healthBar.Heal(25f);
 			Destroy(GameObject.FindWithTag("cherry"));
 		}
 		Debug.Log("Szia te rákos csicska fejû");
