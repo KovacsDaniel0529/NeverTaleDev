@@ -13,10 +13,10 @@ public class PlayerRespawn : MonoBehaviour
     }
     public void RespawnOnDead()
     {
-        if (Health.totalHealth == 0)
+        if (Health.totalHealth == 0f)
         {
             RespawnNow();
-            Health.totalHealth = 100;
+            Health.totalHealth = 100f;
         }
 
     }

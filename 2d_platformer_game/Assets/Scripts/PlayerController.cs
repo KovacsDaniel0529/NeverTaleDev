@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [Range(0, 1)]
     private float moveInput;
     private bool facingRight = true;
-    private Rigidbody2D mybody;
+    public Rigidbody2D mybody;
     private Animator anim;
     public Transform groundCheck;
     public LayerMask groundLayer;
