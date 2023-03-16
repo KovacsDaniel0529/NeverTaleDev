@@ -12,6 +12,7 @@ TagManager:
   - apple
   - cherry
   - Character
+  - Enemy
   layers:
   - Default
   - TransparentFX
