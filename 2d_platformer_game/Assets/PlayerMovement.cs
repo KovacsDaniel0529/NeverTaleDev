@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour {
 
     bool crouch = false;
 
+    /*private void Start()
+    {
+        animator.GetComponent<Animator>();
+    }*/
     // Update is called once per frame
     void Update()
     {
@@ -44,10 +48,16 @@ public class PlayerMovement : MonoBehaviour {
     {
         animator.SetBool("IsCrouching", isCrouching);
     }
+    
+    /*public void Die()
+    {
+        animator.SetTrigger("Death");
+    }*/
      void FixedUpdate()
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime , crouch, jump);
        jump = false;
 
     }
+
 }
