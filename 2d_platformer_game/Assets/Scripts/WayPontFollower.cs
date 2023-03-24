@@ -28,5 +28,6 @@ public class WayPontFollower : MonoBehaviour
         localScale.x *= -1;
         transform.localScale = localScale;
     }
+    
 
 }

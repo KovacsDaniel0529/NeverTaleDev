@@ -15,6 +15,7 @@ public class PlayerRespawn : MonoBehaviour
         transform.position = respawnPoint;
         anim.Play("Player_Idle");
         GetComponent<PlayerMovement>().enabled = true;
+        Debug.Log("Respawn!!!");
         
 
 
@@ -25,7 +26,9 @@ public class PlayerRespawn : MonoBehaviour
             if (Health.totalHealth == 0f)
             {
                 Die();
+                
                 Health.totalHealth = 100f;
+                Debug.Log("MÉg mindig halott");
             }
 
     }
@@ -33,6 +36,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         if(collision.gameObject.tag == "Death")
         {
+            Health.totalHealth = 100f;
             RespawnNow();
         }
         if (collision.gameObject.tag == "trap")
@@ -57,6 +61,7 @@ public class PlayerRespawn : MonoBehaviour
     }
     private void Die()
     {
+        anim.SetBool("IsJumping", false);
         GetComponent<PlayerMovement>().enabled = false;
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");

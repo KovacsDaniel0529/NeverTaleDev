@@ -50,7 +50,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			spikeDamaheCoolOff--;
 		}
-		healthBar.ChangeHealthBarStage();
+		//healthBar.ChangeHealthBarStage();
 	}
 
 	private void FixedUpdate()
@@ -156,40 +156,29 @@ public class CharacterController2D : MonoBehaviour
 		transform.localScale = theScale;
 	}
 
-	public void OnTriggerEnter2D(Collider2D collision)
+	/*public void OnTriggerEnter2D(Collider2D collision)
 	{
-		// Valamiért duplázza a damge-et, és a heal-t
-		// Erre figyelj oda
-		/*if (collision.tag == "trap")
-		{
-			Debug.Log("traphit");
-			int cooloffwait = 100;
-			if (spikeDamaheCoolOff == 0)
-			{
-				healthBar.Damage(25f);
-				spikeDamaheCoolOff = cooloffwait;
-			}
-		}*/
 		if (collision.tag == "melone")
 		{
-			healthBar.Heal(75f);
+			healthBar.Heal(25f);
 			Destroy(GameObject.FindWithTag("melone"));
 		}
-		if (collision.tag == "banana")
+		else if (collision.tag == "banana")
 		{
 			healthBar.Heal(25f);
 			Destroy(GameObject.FindWithTag("banana"));
 		}
-		if (collision.tag == "apple")
+		else if (collision.tag == "apple")
 		{
 			healthBar.Heal(25f);
 			Destroy(GameObject.FindWithTag("apple"));
 		}
-		if (collision.tag == "cherry")
+		else if (collision.tag == "cherry")
 		{
 			healthBar.Heal(25f);
 			Destroy(GameObject.FindWithTag("cherry"));
 		}
-		Debug.Log("Szia te rákos csicska fejû");
-	}
+
+
+	}*/
 }

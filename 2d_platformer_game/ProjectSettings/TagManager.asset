@@ -13,6 +13,8 @@ TagManager:
   - cherry
   - Character
   - Enemy
+  - HurtBox
+  - Coin
   layers:
   - Default
   - TransparentFX
