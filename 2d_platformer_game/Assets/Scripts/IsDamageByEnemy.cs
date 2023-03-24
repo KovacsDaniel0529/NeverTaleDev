@@ -25,17 +25,9 @@ public class IsDamageByEnemy : MonoBehaviour
 
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Character")
-        {
-            if (Player.velocity.y < 0)
-            {
-                Debug.Log("Enemy is Dead");
-                Destroy(Knight);
-            }
-        }
-    }
+    
+
+    
 
 
 

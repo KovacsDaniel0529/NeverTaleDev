@@ -6,6 +6,7 @@ public class TrapDamage : MonoBehaviour
 {
     public CharacterController2D characterController;
     private BoxCollider2D boxcollider;
+    public HealthBar healthBar;
 
 
     // Start is called before the first frame update
@@ -19,10 +20,11 @@ public class TrapDamage : MonoBehaviour
     {
         if (collision.tag == "Character")
         {
-            Debug.Log("traphit");
-            int cooloffwait = 50;
+            
+            int cooloffwait = 25;
             if (characterController.spikeDamaheCoolOff == 0)
             {
+                Debug.Log("traphit");
                 Health.totalHealth -= 25f;
                 characterController.spikeDamaheCoolOff = cooloffwait;
             }

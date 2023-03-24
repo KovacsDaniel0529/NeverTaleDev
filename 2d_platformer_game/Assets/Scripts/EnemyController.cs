@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
 
     public void Kill()
     {
+        GetComponent<IsDamageByEnemy>().enabled = false;
         Destroy(Knight);
     }
 }
