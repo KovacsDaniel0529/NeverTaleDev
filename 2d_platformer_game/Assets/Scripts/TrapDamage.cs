@@ -21,7 +21,7 @@ public class TrapDamage : MonoBehaviour
         if (collision.tag == "Character")
         {
             
-            int cooloffwait = 25;
+            int cooloffwait = 50;
             if (characterController.spikeDamaheCoolOff == 0)
             {
                 Debug.Log("traphit");
