@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayTheGame() => SceneManager.LoadScene("jatek");
+    public void PlayTheGame() => SceneManager.LoadScene("CutScene");
 
     public void OptionsMenu() => SceneManager.LoadScene("Scenes/OptionsScene");
 
