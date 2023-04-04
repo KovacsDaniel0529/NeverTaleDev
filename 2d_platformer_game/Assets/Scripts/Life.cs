@@ -21,12 +21,13 @@ public class Life : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 1f;
         gameover.SetActive(false);
     }
-    void delay()
+
+    void lifeup()
     {
-        Time.timeScale = 0f;
+        isHalal = false;
+        fullLife = 4;
     }
 
     void Update()
@@ -42,10 +43,10 @@ public class Life : MonoBehaviour
 
         if (isHalal)
         {
-            isHalal = false;
             Debug.Log("GameOver");
             gameover.SetActive(true);
-            Invoke("delay", 4f);
+            lifeup();
+           
         }
     }
 }
