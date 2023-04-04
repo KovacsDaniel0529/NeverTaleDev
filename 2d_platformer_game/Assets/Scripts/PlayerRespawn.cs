@@ -37,6 +37,8 @@ public class PlayerRespawn : MonoBehaviour
         if(collision.gameObject.tag == "Death")
         {
             Health.totalHealth = 100f;
+            Life.fullLife -= 1;
+            Debug.Log(Life.fullLife);
             RespawnNow();
         }
         if (collision.gameObject.tag == "trap")
@@ -61,6 +63,8 @@ public class PlayerRespawn : MonoBehaviour
     }
     private void Die()
     {
+        Life.fullLife -= 1;
+        Debug.Log(Life.fullLife);
         anim.SetBool("IsJumping", false);
         GetComponent<PlayerMovement>().enabled = false;
         rb.bodyType = RigidbodyType2D.Static;
