@@ -2,41 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-public class CoinScript : MonoBehaviour
-{
 
-    public int ScoreNum;
-    public TextMeshProUGUI textCoin;
+public class KeyScript : MonoBehaviour
+{
+    public bool haveAKey = false;
     private bool _collected = false;
+    public Image image;
     // Start is called before the first frame update
     void Start()
     {
-        
-        ScoreNum = 0;
-        
+        haveAKey = false;
+        image.enabled = false;
     }
-    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Coin")
+        if (collision.tag == "Key")
         {
-            Debug.Log("Meg van a péz");
+            Debug.Log("Meg van a kulcs");
             if (!_collected)
             {
                 Destroy(collision.gameObject);
-                ScoreNum += 1;
-                textCoin.text = ScoreNum.ToString();
-                
+                haveAKey = true;
+                image.enabled = true;
+
             }
-            
-
-
 
         }
-        
-
     }
-
 }

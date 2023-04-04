@@ -9,6 +9,8 @@ public class TimeLineManager : MonoBehaviour
     public Animator playerAnimator;
     public RuntimeAnimatorController playerAnim;
     public PlayableDirector director;
+    public Rigidbody2D rb;
+    public PlayerMovement playerMovement;
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -16,13 +18,25 @@ public class TimeLineManager : MonoBehaviour
         playerAnimator.runtimeAnimatorController = null;
     }
 
+
     // Update is called once per frame
     void Update()
     {
-        if (director.state != PlayState.Playing)
+
+        if (director.state == PlayState.Playing)
         {
+            playerMovement._canMove = false;
             fix = true;
+
+            
+
+
+        }
+        else
+        {
             playerAnimator.runtimeAnimatorController = playerAnim;
+            playerMovement._canMove = true;
+            
         }
     }
 }

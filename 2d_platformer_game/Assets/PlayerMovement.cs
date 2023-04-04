@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour {
 
     bool crouch = false;
 
+    public bool _canMove;
+
     /*private void Start()
     {
         animator.GetComponent<Animator>();
@@ -23,21 +25,26 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        animator.SetFloat("Speed",Mathf.Abs(horizontalMove));
+        if (_canMove)
+        {
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+            animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            jump = true;
-            animator.SetBool("IsJumping", true);
+            if (Input.GetButtonDown("Jump"))
+            {
+                jump = true;
+                animator.SetBool("IsJumping", true);
+            }
+            if (Input.GetButtonDown("Crouch"))
+            {
+                crouch = true;
+            }
+            else if (Input.GetButtonUp("Crouch"))
+            {
+                crouch = false;
+            }
         }
-        if (Input.GetButtonDown("Crouch"))
-        {
-            crouch = true;
-        }
-        else if(Input.GetButtonUp("Crouch")){
-            crouch = false;
-        }
+        
     }
     public void OnLanding()
     {
