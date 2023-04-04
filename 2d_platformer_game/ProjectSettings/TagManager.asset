@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - HurtBox
   - Coin
+  - Key
   layers:
   - Default
   - TransparentFX
