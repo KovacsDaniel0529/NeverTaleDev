@@ -11,13 +11,15 @@ public class Life : MonoBehaviour
 
     public static int fullLife = 4;
 
+    public int tfl = fullLife;
+
     public TextMeshProUGUI textmesh;
 
     public GameObject gameover;
 
     //private bool halal = false;
 
-    private bool isHalal;
+    private bool isHalal = false;
 
     void Start()
     {
@@ -27,6 +29,7 @@ public class Life : MonoBehaviour
     void lifeup()
     {
         isHalal = false;
+        PlayerPrefs.DeleteAll();
         fullLife = 4;
     }
 
@@ -43,10 +46,13 @@ public class Life : MonoBehaviour
 
         if (isHalal)
         {
+            
             Debug.Log("GameOver");
             gameover.SetActive(true);
-            lifeup();
+            Invoke("lifeup", 1f);
            
+
         }
+
     }
 }

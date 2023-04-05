@@ -25,7 +25,7 @@ public class TrapDamage : MonoBehaviour
             if (characterController.spikeDamaheCoolOff == 0)
             {
                 Debug.Log("traphit");
-                Health.totalHealth -= 25f;
+                HealthBar.totalHealth -= 25f;
                 characterController.spikeDamaheCoolOff = cooloffwait;
             }
         }
