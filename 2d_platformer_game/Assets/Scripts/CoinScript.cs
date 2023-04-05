@@ -10,13 +10,12 @@ public class CoinScript : MonoBehaviour
     public TextMeshProUGUI textCoin;
     private bool _collected = false;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        
-        ScoreNum = 0;
-        
+        ScoreNum = PlayerPrefs.GetInt("hasCoins");
+        textCoin.text = ScoreNum.ToString();
     }
-    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

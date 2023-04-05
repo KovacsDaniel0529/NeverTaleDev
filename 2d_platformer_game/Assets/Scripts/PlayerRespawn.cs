@@ -23,11 +23,11 @@ public class PlayerRespawn : MonoBehaviour
     public void RespawnOnDead()
     {
         
-            if (Health.totalHealth == 0f)
+            if (HealthBar.totalHealth == 0f)
             {
                 Die();
                 
-                Health.totalHealth = 100f;
+                HealthBar.totalHealth = 100f;
                 Debug.Log("MÉg mindig halott");
             }
 
@@ -36,7 +36,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         if(collision.gameObject.tag == "Death")
         {
-            Health.totalHealth = 100f;
+            HealthBar.totalHealth = 100f;
             Life.fullLife -= 1;
             Debug.Log(Life.fullLife);
             RespawnNow();

@@ -17,7 +17,7 @@ public class IsDamageByEnemy : MonoBehaviour
                 int cooloffwait = 50;
                 if (characterController.spikeDamaheCoolOff == 0)
                 {
-                    Health.totalHealth -= 25f;
+                    HealthBar.totalHealth -= 25f;
                     characterController.spikeDamaheCoolOff = cooloffwait;
                 }
                 Debug.Log("The enemy hit the player");

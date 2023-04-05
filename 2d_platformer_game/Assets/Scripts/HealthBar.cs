@@ -6,21 +6,23 @@ public class HealthBar : MonoBehaviour
     public Sprite healthStage1, healthStage2, healthStage3, healthStage4;
     public Image healthBarIMG;
     private Animator anim;
+    public static float totalHealth = 100f;
+    public float tHP = totalHealth;
 
-       
-    
+
+
     private void Start()
     {
         anim = GetComponent<Animator>();
         healthBarIMG = GetComponent<Image>();
         ChangeHealthBarStage();
-        Debug.Log(Health.totalHealth);
+        Debug.Log(totalHealth);
     }
 
     public void Damage(float damage)
     {
 
-        if ((Health.totalHealth -= damage) > 0f)
+        if ((totalHealth -= damage) > 0f)
         {
             
             anim.SetTrigger("Hurt");
@@ -28,7 +30,7 @@ public class HealthBar : MonoBehaviour
         }
         else
         {
-            Health.totalHealth = 0f;
+            totalHealth = 0f;
 
         }
         ChangeHealthBarStage();
@@ -37,13 +39,13 @@ public class HealthBar : MonoBehaviour
 
     public void Heal(float heal)
     {
-        if ((Health.totalHealth ) < 100f)
+        if ((totalHealth ) < 100f)
         {
-            Health.totalHealth += heal;
+            totalHealth += heal;
         }
         else
         {
-            Health.totalHealth = 100f;
+            totalHealth = 100f;
             
         }
         ChangeHealthBarStage();
@@ -52,19 +54,19 @@ public class HealthBar : MonoBehaviour
 
     public void ChangeHealthBarStage()
     {
-        if (Health.totalHealth >= 100f)
+        if (totalHealth >= 100f)
         {
             healthBarIMG.sprite = healthStage1;
         }
-        if (Health.totalHealth <= 75f)
+        if (totalHealth <= 75f)
         {
             healthBarIMG.sprite = healthStage2;
         }
-        if (Health.totalHealth <= 50f)
+        if (totalHealth <= 50f)
         {
             healthBarIMG.sprite = healthStage3;
         }
-        if (Health.totalHealth <= 25f)
+        if (totalHealth <= 25f)
         {
             healthBarIMG.sprite = healthStage4;
         }

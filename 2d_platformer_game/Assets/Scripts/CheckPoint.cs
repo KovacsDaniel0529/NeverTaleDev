@@ -11,7 +11,8 @@ public class CheckPoint : MonoBehaviour
     public float[] savePosition;
     public KeyScript hasKey;
     public CoinScript coin;
-    public Health health;
+    public HealthBar healthBar;
+    public Life fullLife;
 
 
 
@@ -34,20 +35,25 @@ public class CheckPoint : MonoBehaviour
     }
     public void SaveCheckpoint()
     {
-        int keystuff = 0;
+        int keystuff;
         if (hasKey.haveAKey)
         {
             keystuff = 1;
         }
+        else
+        {
+            keystuff = 0;
+        }
         
         //playerRespawn.respawnPoint;
         // pozíció
-        PlayerPrefs.SetString("PlayerX", Convert.ToString(playerRespawn.transform.position.x));
-        PlayerPrefs.SetString("PlayerY", Convert.ToString(playerRespawn.transform.position.y));
-        PlayerPrefs.SetString("PlayerZ", Convert.ToString(playerRespawn.transform.position.z));
+        PlayerPrefs.SetFloat("PlayerX", playerRespawn.transform.position.x);
+        PlayerPrefs.SetFloat("PlayerY", playerRespawn.transform.position.y);
+        PlayerPrefs.SetFloat("PlayerZ", playerRespawn.transform.position.z);
         PlayerPrefs.SetInt("hasKey", keystuff);
         PlayerPrefs.SetInt("hasCoins", coin.ScoreNum);
-        PlayerPrefs.SetFloat("hasHP", health.tHP);
+        PlayerPrefs.SetFloat("hasHP", healthBar.tHP);
+        PlayerPrefs.SetInt("FullLife", Life.fullLife );
 
         PlayerPrefs.Save();
 
