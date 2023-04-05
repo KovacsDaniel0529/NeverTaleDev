@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-public class TrapDamage : MonoBehaviour
+public class CharacterHitByArrow : MonoBehaviour
 {
     public CharacterController2D characterController;
     private BoxCollider2D boxcollider;
@@ -14,18 +13,18 @@ public class TrapDamage : MonoBehaviour
     void Start()
     {
         boxcollider = GetComponent<BoxCollider2D>();
-        
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Character")
+        if (collision.tag == "arrow")
         {
-            
+
             int cooloffwait = 50;
             if (characterController.spikeDamaheCoolOff == 0)
             {
-                Debug.Log("traphit");
+                Debug.Log("Hit the arrow");
                 HealthBar.totalHealth -= 25f;
                 characterController.spikeDamaheCoolOff = cooloffwait;
             }

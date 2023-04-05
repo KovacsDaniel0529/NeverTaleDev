@@ -16,6 +16,8 @@ TagManager:
   - HurtBox
   - Coin
   - Key
+  - wall
+  - arrow
   layers:
   - Default
   - TransparentFX
