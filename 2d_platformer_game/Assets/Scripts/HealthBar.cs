@@ -24,9 +24,8 @@ public class HealthBar : MonoBehaviour
 
         if ((totalHealth -= damage) > 0f)
         {
-            
             anim.SetTrigger("Hurt");
-            
+
         }
         else
         {
@@ -35,6 +34,7 @@ public class HealthBar : MonoBehaviour
         }
         ChangeHealthBarStage();
         Debug.Log("Damage");
+        FindObjectOfType<AudioManager>().Play("HurtSound");
     }
 
     public void Heal(float heal)
@@ -50,6 +50,7 @@ public class HealthBar : MonoBehaviour
         }
         ChangeHealthBarStage();
         Debug.Log("Heal");
+        FindObjectOfType<AudioManager>().Play("HealSound");
     }
 
     public void ChangeHealthBarStage()

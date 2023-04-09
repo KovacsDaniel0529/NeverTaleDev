@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class OptionsaMenu : MonoBehaviour
 {
-
+    /*
     public AudioMixer audioMixer;
 
     public void SetVolume(float volume)
@@ -25,4 +25,6 @@ public class OptionsaMenu : MonoBehaviour
     }
 
     public void BackToMenu() => SceneManager.LoadScene("Scenes/Menuscene");
+
+    */
 }
