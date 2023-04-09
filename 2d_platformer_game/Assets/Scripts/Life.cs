@@ -42,13 +42,13 @@ public class Life : MonoBehaviour
             isHalal = true;
         }
 
-
-
         if (isHalal)
         {
             
             Debug.Log("GameOver");
             gameover.SetActive(true);
+            FindObjectOfType<AudioManager>().Stop("JatekTheme");
+            FindObjectOfType<AudioManager>().Play("OverSound");
             Invoke("lifeup", 1f);
            
 

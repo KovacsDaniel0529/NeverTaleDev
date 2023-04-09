@@ -25,7 +25,11 @@ public class CheckPoint : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "Character")
+        if (flag.activeSelf)
+        {
+            FindObjectOfType<AudioManager>().Play("CheckSound");
+        }
+        if (collision.gameObject.name == "Character")
         {
             playerRespawn.respawnPoint = transform.position;
             defaultFlag.SetActive(true);

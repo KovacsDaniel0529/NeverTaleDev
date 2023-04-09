@@ -22,6 +22,7 @@ public class CoinScript : MonoBehaviour
         if(collision.tag == "Coin")
         {
             Debug.Log("Meg van a péz");
+            FindObjectOfType<AudioManager>().Play("CoinSound");
             if (!_collected)
             {
                 Destroy(collision.gameObject);
