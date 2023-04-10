@@ -57,6 +57,7 @@ public class MainMenu : MonoBehaviour
     public void OpenOptions()
     {
         optionsScreen.SetActive(true);
+        noSave.SetActive(false);
     }
 
     public void CloseOptions()
