@@ -26,6 +26,7 @@ public class CharacterHitByArrow : MonoBehaviour
             {
                 Debug.Log("Hit the arrow");
                 HealthBar.totalHealth -= 25f;
+                FindObjectOfType<AudioManager>().Play("HurtSound");
                 characterController.spikeDamaheCoolOff = cooloffwait;
             }
         }

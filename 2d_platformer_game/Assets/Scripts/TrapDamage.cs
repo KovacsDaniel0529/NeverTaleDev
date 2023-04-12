@@ -27,6 +27,7 @@ public class TrapDamage : MonoBehaviour
             {
                 Debug.Log("traphit");
                 HealthBar.totalHealth -= 25f;
+                FindObjectOfType<AudioManager>().Play("HurtSound");
                 characterController.spikeDamaheCoolOff = cooloffwait;
             }
         }
