@@ -36,6 +36,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         if(collision.gameObject.tag == "Death")
         {
+            FindObjectOfType<AudioManager>().Play("DedSound");
             HealthBar.totalHealth = 100f;
             Life.fullLife -= 1;
             Debug.Log(Life.fullLife);
@@ -63,6 +64,7 @@ public class PlayerRespawn : MonoBehaviour
     }
     private void Die()
     {
+        FindObjectOfType<AudioManager>().Play("BubbleDed");
         Life.fullLife -= 1;
         Debug.Log(Life.fullLife);
         anim.SetBool("IsJumping", false);

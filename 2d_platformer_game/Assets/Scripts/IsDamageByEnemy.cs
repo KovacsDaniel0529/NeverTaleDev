@@ -18,6 +18,7 @@ public class IsDamageByEnemy : MonoBehaviour
                 if (characterController.spikeDamaheCoolOff == 0)
                 {
                     HealthBar.totalHealth -= 25f;
+                    FindObjectOfType<AudioManager>().Play("HurtSound");
                     characterController.spikeDamaheCoolOff = cooloffwait;
                 }
                 Debug.Log("The enemy hit the player");

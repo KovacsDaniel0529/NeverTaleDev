@@ -33,6 +33,7 @@ public class KeyScript : MonoBehaviour
             Debug.Log("Meg van a kulcs");
             if (!_collected)
             {
+                FindObjectOfType<AudioManager>().Play("KeySound");
                 Destroy(collision.gameObject);
                 haveAKey = true;
                 image.enabled = true;

@@ -22,16 +22,19 @@ public class DoorOpen : MonoBehaviour
             Debug.Log(" E lenyomva");
             if (coin.ScoreNum < 25 && key.haveAKey == true)
             {
+                FindObjectOfType<AudioManager>().Play("PopUpText");
                 noCoin.SetActive(true);
                 Debug.Log("Elivleg Nincs péz");
             }
             else if (key.haveAKey == false && coin.ScoreNum >= 25)
             {
+                FindObjectOfType<AudioManager>().Play("PopUpText");
                 noKey.SetActive(true);
                 Debug.Log("Elivleg Nincs kulcs");
             }
             else if (key.haveAKey == false && coin.ScoreNum < 25)
             {
+                FindObjectOfType<AudioManager>().Play("PopUpText");
                 noKeyAndNoCoin.SetActive(true);
                 Debug.Log("Elivleg Nincs semmi");
             }

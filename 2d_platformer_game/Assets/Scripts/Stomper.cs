@@ -17,6 +17,7 @@ public class Stomper : MonoBehaviour
     {
         if (other.gameObject.tag == "HurtBox")
         {
+            FindObjectOfType<AudioManager>().Play("KnightDed");
             other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal);
         }
     }
