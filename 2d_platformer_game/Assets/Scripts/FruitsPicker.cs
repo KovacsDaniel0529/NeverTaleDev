@@ -4,34 +4,22 @@ using UnityEngine;
 
 public class FruitsPicker : MonoBehaviour
 {
+	public float healpoint;
 	public HealthBar healthBar;
 
     private void Update()
     {
 		healthBar.ChangeHealthBarStage();
+		
 	}
     public void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.tag == "melone")
+		if (collision.tag == "FruitPicker")
 		{
-			healthBar.Heal(75f);
-			Destroy(GameObject.FindWithTag("melone"));
+			healthBar.Heal(healpoint);
+			Destroy(gameObject);
 		}
-		else if (collision.tag == "banana")
-		{
-			healthBar.Heal(50f);
-			Destroy(GameObject.FindWithTag("banana"));
-		}
-		else if (collision.tag == "apple")
-		{
-			healthBar.Heal(25f);
-			Destroy(GameObject.FindWithTag("apple"));
-		}
-		else if (collision.tag == "cherry")
-		{
-			healthBar.Heal(25f);
-			Destroy(GameObject.FindWithTag("cherry"));
-		}
+		
 
 
 	}

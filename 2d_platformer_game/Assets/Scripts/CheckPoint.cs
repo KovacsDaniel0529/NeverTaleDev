@@ -56,7 +56,7 @@ public class CheckPoint : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerZ", playerRespawn.transform.position.z);
         PlayerPrefs.SetInt("hasKey", keystuff);
         PlayerPrefs.SetInt("hasCoins", coin.ScoreNum);
-        PlayerPrefs.SetFloat("hasHP", healthBar.tHP);
+        PlayerPrefs.SetFloat("hasHP", HealthBar.totalHealth);
         PlayerPrefs.SetInt("FullLife", Life.fullLife );
 
         PlayerPrefs.Save();

@@ -6,13 +6,25 @@ public class HealthBar : MonoBehaviour
     public Sprite healthStage1, healthStage2, healthStage3, healthStage4;
     public Image healthBarIMG;
     private Animator anim;
-    public static float totalHealth = 100f;
+    public static float totalHealth;
     public float tHP = totalHealth;
 
-
+    private void Update()
+    {
+        Debug.Log(totalHealth);
+    }
 
     private void Start()
     {
+        if (PlayerPrefs.GetFloat("hasHP") > 0f)
+        {
+            totalHealth = PlayerPrefs.GetFloat("hasHP");
+        }
+        else
+        {
+            totalHealth = 100f;
+        }
+
         anim = GetComponent<Animator>();
         healthBarIMG = GetComponent<Image>();
         ChangeHealthBarStage();
@@ -39,13 +51,13 @@ public class HealthBar : MonoBehaviour
 
     public void Heal(float heal)
     {
-        if ((totalHealth ) < 100f)
+        if ((heal + totalHealth) >= 100f)
         {
-            totalHealth += heal;
+            totalHealth = 100f;
         }
         else
         {
-            totalHealth = 100f;
+            totalHealth += heal;
             
         }
         ChangeHealthBarStage();
@@ -55,19 +67,19 @@ public class HealthBar : MonoBehaviour
 
     public void ChangeHealthBarStage()
     {
-        if (totalHealth >= 100f)
+        if (totalHealth == 100f)
         {
             healthBarIMG.sprite = healthStage1;
         }
-        if (totalHealth <= 75f)
+        if (totalHealth == 75f)
         {
             healthBarIMG.sprite = healthStage2;
         }
-        if (totalHealth <= 50f)
+        if (totalHealth == 50f)
         {
             healthBarIMG.sprite = healthStage3;
         }
-        if (totalHealth <= 25f)
+        if (totalHealth == 25f)
         {
             healthBarIMG.sprite = healthStage4;
         }

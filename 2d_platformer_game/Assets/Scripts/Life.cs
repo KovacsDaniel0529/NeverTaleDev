@@ -9,7 +9,7 @@ public class Life : MonoBehaviour
 {
     public void GoToMenu() => SceneManager.LoadScene("Menuscene");
 
-    public static int fullLife = 4;
+    public static int fullLife;
 
     public int tfl = fullLife;
 
@@ -23,6 +23,15 @@ public class Life : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.GetInt("FullLife") > 0 )
+        {
+            fullLife = PlayerPrefs.GetInt("FullLife");
+        }
+        else
+        {
+            fullLife = 4;
+        }
+        
         gameover.SetActive(false);
     }
 

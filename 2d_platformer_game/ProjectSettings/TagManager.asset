@@ -18,6 +18,8 @@ TagManager:
   - Key
   - wall
   - arrow
+  - gate
+  - FruitPicker
   layers:
   - Default
   - TransparentFX
